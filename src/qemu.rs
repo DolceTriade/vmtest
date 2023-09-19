@@ -706,6 +706,7 @@ impl Qemu {
                     Ok(_) => {
                         // Remove newline
                         line.pop();
+                        println!("{}", line);
                         let _ = updates.send(Output::Boot(line));
                     }
                     Err(e) => debug!("Failed to read from qemu stdout: {}", e),
